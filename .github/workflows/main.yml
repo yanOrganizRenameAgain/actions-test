@@ -9,5 +9,8 @@ jobs:
       - run: echo $GITHUB_CONTEXT
         env: 
            GITHUB_CONTEXT: ${{ toJson(github) }} 
+      - run: echo $msg
+        env: 
+            msg: ${{ github.event.commits.message }}
          
       
