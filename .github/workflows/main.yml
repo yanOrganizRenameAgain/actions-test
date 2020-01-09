@@ -4,6 +4,7 @@ on: push
     
 jobs:
   job1:
+    if:  startsWith( github.event.commits[0].message , 'Version change')
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_CONTEXT
