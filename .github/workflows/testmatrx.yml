@@ -7,12 +7,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        version: [5.2, 5.6]
-    container: image1:${{ matrix.version }} 
+
     steps:
-    - run: echo $GITHUB_CONTEXT
+    - run: echo $PATH
       env: 
         GITHUB_CONTEXT: ${{ toJson(github) }} 
     - name: Run a one-line script
