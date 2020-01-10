@@ -14,4 +14,5 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }} 
     - name: Run a one-line script
       run: echo Hello, world
+    - uses: actions/checkout@${{env.rr}}
 
