@@ -1,14 +1,18 @@
 name: main
 
-on: push
+on: 
+  push: 
+      tags:   
+          - '*'
     
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-         curl https://dl.bintray.com/kotlin/kotlin-dev/org/jetbrains/kotlin/kotlin-compiler/maven-metadata.xml
-         curl www.tecmint.com
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
          
       
