@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
          curl https://dl.bintray.com/kotlin/kotlin-dev/org/jetbrains/kotlin/kotlin-compiler/maven-metadata.xml
-       
+         curl www.tecmint.com
          
       
