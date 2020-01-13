@@ -2,8 +2,7 @@ name: main
 
 on: 
   push: 
-      tags:   
-          - '*'
+
     
 jobs:
   job1:
