@@ -1,5 +1,5 @@
 name: test status event
-on: check_suite
+on: push
 
 jobs:
   job1:
@@ -7,20 +7,6 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
-    - name: Shutdown Ubuntu MySQL (SUDO)
-      run: sudo service mysql stop
-      
-    - name: Dump GitHub context
+    - run: echo $ORG
       env:
-          GITHUB: ${{ toJson(github) }}
-      run: echo "$GITHUB"
-    - uses: actions/checkout@master
-      #with:
-          #repository: Yanjingzhu/privateone 
-          #token: ${{secrets.GITHUB_PAT}}
-          #ref: master    
-          
-          #- uses: maddox/actions/sleep@master
-          # dddd tt 
-          # ddddxxx
-   
+        ORG: ${{ secrets.ORG_Secret1 }}
